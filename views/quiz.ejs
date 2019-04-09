@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Quiz </title>
+    <link href="/assets/styles.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/styleForRadio.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="/assets/multipleQuizFormStyle.css" rel="stylesheet" type="text/css" />
+    <script src="/assets/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <form action="/quiz_success" method="POST">
+        <h1>Quiz</h1>
+        <% for (var i = 0; i < questions.length; i++) { %>
+        <fieldset>
+            <div class="tab">
+                <h2><%= questions[i].question %></h2>
+                <% for (var j = 0; j < questions[i].choice.length; j++) { %>
+                <label class="container"><%= questions[i].choice[j] %>
+                    <input type="radio" name="<%= i %>" value="<%= j %>" checked>
+                    <span class="checkmark"></span>
+                </label>
+                <% } %>
+            </div>
+        </fieldset>
+        <% } %>
+        <input type="submit" value="Submit">
+
+        <!-- Circles which indicates the steps of the form: -->
+        <!-- <div style="text-align:center;margin-top:40px;">
+            <% for (var i = 0; i < questions.length; i++) { %>
+            <span class="step"></span>
+            <% } %>
+        </div> -->
+    </form>
+    <!-- <script src="/assets/multipleQuizForm.js"></script> -->
+</body>
+
+</html>
