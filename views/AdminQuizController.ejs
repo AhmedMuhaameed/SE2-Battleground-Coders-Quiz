@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>Admin Quiz Controller</head>
+<body>
+    <% for(var k = 0; k < node.length; k++){ %>
+    <form action="/tempPageForAdmin" method="POST">
+        <h1>Quiz</h1>
+        <br>
+        <% for (var i = 0; i < node[k].size; i++) { %>
+        <fieldset id = "<%= i %>">
+            <div class="tab">
+                <h2><%= node[k].question[i] %></h2>
+                <% for (var j = 0; j < node[k].choices[i].length; j++) { %>
+                <label class="container"><%= node[k].choices[i][j] %>
+                    <input type="radio" id = "<%= i %>" name="<%= i %>" value="<%= j %>" checked>
+                    <span class="checkmark"></span>
+                </label>
+                <% } %>
+            </div>
+        </fieldset>
+        <% } %>
+        <input type="hidden" name='id' value="<%= node[k].id %>">
+        <input type="submit" value="Delete">
+    </form>
+    <% } %>
+</body>
+</html>
