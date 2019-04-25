@@ -44,7 +44,7 @@ module.exports = function (app) {
         //console.log(node);
 
                 
-        quizModel.find({}, function(err, res)
+        quizModel.find({}, { useNewUrlParser: true }, function(err, res)
         {
             if(err) console.error(err);
             else
@@ -71,6 +71,15 @@ module.exports = function (app) {
         });
         */
           
+    })
+
+    app.post('/quizzes', function(req, res){
+        quizModel.find({}, function(err, quize){
+            if(err) console.error(err);
+            else{
+                res.json(quize);
+            }
+        })
     })
 
     app.get('/quiz', function (req, res) {
