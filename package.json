@@ -1,0 +1,26 @@
+{
+  "name": "quiz-sw2",
+  "version": "1.0.0",
+  "description": "quiz component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Battleground Coders Team",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AhmedMuhaameed/SE2-Battleground-Coders-Quiz.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AhmedMuhaameed/SE2-Battleground-Coders-Quiz/issues"
+  },
+  "homepage": "https://github.com/AhmedMuhaameed/SE2-Battleground-Coders-Quiz#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.4"
+  }
+}
