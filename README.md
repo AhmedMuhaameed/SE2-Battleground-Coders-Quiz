@@ -48,4 +48,5 @@
 ```
 
 # Some picture help you how to use Quiz API
-* ![get all quizzes](https://github.com/AhmedMuhaameed/SE2-Battleground-Coders-Quiz/blob/master/images/post%20quizzes.PNG)
+* get all quizzes
+![get all quizzes](https://github.com/AhmedMuhaameed/SE2-Battleground-Coders-Quiz/blob/master/images/post%20quizzes.PNG)
