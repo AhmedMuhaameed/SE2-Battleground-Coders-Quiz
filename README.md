@@ -3,10 +3,10 @@
 
 
 ## Table of contents
-* [Contributors] (#Contributors)
-* [Our Schema] (#Our-Schema)
-* [Some picture help you how to use Quiz API](#Some-picture-help-you-how-to-use-Quiz-API)
-* [Setup] (#Setup)
+* [Contributors] (#contributors)
+* [Our Schema] (#our-Schema)
+* [Some picture help you how to use Quiz API](#some-picture-help-you-how-to-use-Quiz-API)
+* [Setup] (#setup)
 
 
 
