@@ -61,9 +61,9 @@
 ![delete quiz](https://github.com/AhmedMuhaameed/SE2-Battleground-Coders-Quiz/blob/master/images/delete%20deleteQuiz.PNG)
 
 #### Info
-* *we use node js
-* *we use express ```npm install express```
-* *we use body-parser ```npm install body-parser```
-* *we use ejs ```npm install ejs```
-* *we use mongoose ```npm install mongoose````
-* *we use mongo database and our database called quiz and our collections called quizcollections
+* we use node js
+* we use express ```npm install express```
+* we use body-parser ```npm install body-parser```
+* we use ejs ```npm install ejs```
+* we use mongoose ```npm install mongoose```
+* we use mongo database and our database called quiz and our collections called quizcollections
