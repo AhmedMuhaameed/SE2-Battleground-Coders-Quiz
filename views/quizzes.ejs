@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quizzes</title>
+</head>
+<body>
+    <%for(var i = 0; i < quizzes.length; i++) {%>
+        <form action="/deleteQuiz" method="POST" id="quiz<%=i%>">
+            <ol>
+                <% for(var j = 0; j < quizzes[i].size; j++) {%>
+                    <li>
+                        <h3><%=quizzes[i].question[j]%></h3>
+                        <% for(var k = 0; k < quizzes[i].choices[j].length; k++) {%>
+                            <div>
+                                <!-- <input type="radio" name="question_<%=j%>_answers" id="question_<%=j%>_answers_<%=k%>" value="<%=quizzes[i].choices[j][k]%>" checked/> -->
+                                <label for="question_<%=j%>_answers_<%=k%>"><%=quizzes[i].choices[j][k]%></label>                                
+                            </div>
+                        <%}%>
+                    </li>
+                <%}%>
+            </ol>
+            <input type="hidden" name="size" value="<%=quizzes[i].size%>">
+            <input type="hidden" name="id" value="<%=quizzes[i]._id%>">
+            <label for="for delete">for delete copy this and paste it in postman in DELETE request mode:</label>
+            <br>
+            <input type="text" value="/deleteQuiz.json/<%=quizzes[i]._id%>"/>
+        </form>
+    <%}%>
+</body>
+</html>

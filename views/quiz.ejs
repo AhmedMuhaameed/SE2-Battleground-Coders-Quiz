@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+</head>
+<body>
+    <div>
+        <h1>Quiz at <%= quiz.field%></h1>
+        <form action="/grade.json" method="post" id="quiz">
+            <ol>
+                <% for(var i = 0; i < quiz.size; i++) {%>
+                    <li>
+                        <h3><%=quiz.question[i]%></h3>
+                        <% for(var j = 0; j < quiz.choices[i].length; j++) {%>
+                            <div>
+                                <input type="radio" name="question_<%=i%>_answers" id="question_<%=i%>_answers_<%=j%>" value="<%=quiz.choices[i][j]%>" checked/>
+                                <label for="question_<%=i%>_answers_<%=j%>"><%=quiz.choices[i][j]%></label>
+                            </div>
+                        <%}%>
+                    </li>
+                <%}%>
+            </ol>
+            <input type="hidden" name="size" value="<%=quiz.size%>">
+            <input type="hidden" name="id" value="<%=quiz._id%>">
+            <input type="submit" value="Submit Quiz"/>
+        </form>
+    </div>
+</body>
+</html>
