@@ -6,7 +6,7 @@
 * [Contributors] (#Contributors)
 * [Our Schema] (#Our Schema)
 * [Some picture help you how to use Quiz API](#Some picture help you how to use Quiz API)
-* [Info] (#Info)
+* [Setup] (#Setup)
 
 
 
@@ -78,7 +78,7 @@
 
 
 
-## Info
+## Setup
 * we use node js
 * we use express ```npm install express```
 * we use body-parser ```npm install body-parser```
