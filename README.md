@@ -1,10 +1,12 @@
 # SE2-Battleground-Coders-Quiz
 
 
+
 ## Contributors
 * Ahmed Ehab Hussein 20160007
 * Ahmed Mohamed Abd El-Rahman 20160029
 * Ahmed Mohamed Magdy 20160033
+
 
 
 #### Quiz API
@@ -12,6 +14,7 @@
 * To add quiz ```/addQuiz.json``` by post request don't forget to pass data like or scheme, it will mention later
 * Todelete quiz ```/deleteQuiz.json/:id``` by delete request id refer to id of quiz
 * To get all quizzes ```/quizzes.json``` by post request
+
 
 
 ## Our Schema
@@ -47,20 +50,27 @@
 }
 ```
 
+
+
 # Some picture help you how to use Quiz API
 * get all quizzes
 ![get all quizzes](https://github.com/AhmedMuhaameed/SE2-Battleground-Coders-Quiz/blob/master/images/post%20quizzes.PNG)
 
+
 * get quiz
 ![take quiz](https://github.com/AhmedMuhaameed/SE2-Battleground-Coders-Quiz/blob/master/images/get%20quiz.PNG)
+
 
 * add quiz
 ![add quiz](https://github.com/AhmedMuhaameed/SE2-Battleground-Coders-Quiz/blob/master/images/post%20addQuiz.PNG)
 
+
 * delete quiz
 ![delete quiz](https://github.com/AhmedMuhaameed/SE2-Battleground-Coders-Quiz/blob/master/images/delete%20deleteQuiz.PNG)
 
-#### Info
+
+
+## Info
 * we use node js
 * we use express ```npm install express```
 * we use body-parser ```npm install body-parser```
