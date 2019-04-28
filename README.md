@@ -50,3 +50,12 @@
 # Some picture help you how to use Quiz API
 * get all quizzes
 ![get all quizzes](https://github.com/AhmedMuhaameed/SE2-Battleground-Coders-Quiz/blob/master/images/post%20quizzes.PNG)
+
+* get quiz
+![take quiz](https://github.com/AhmedMuhaameed/SE2-Battleground-Coders-Quiz/blob/master/images/get%20quiz.PNG)
+
+* add quiz
+![add quiz](https://github.com/AhmedMuhaameed/SE2-Battleground-Coders-Quiz/blob/master/images/post%20addQuiz.PNG)
+
+* delete quiz
+![delete quiz](https://github.com/AhmedMuhaameed/SE2-Battleground-Coders-Quiz/blob/master/images/delete%20deleteQuiz.PNG)
