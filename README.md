@@ -4,8 +4,8 @@
 
 ## Table of contents
 * [Contributors] (#Contributors)
-* [Our Schema] (#Our Schema)
-* [Some picture help you how to use Quiz API](#Some picture help you how to use Quiz API)
+* [Our Schema] (#Our-Schema)
+* [Some picture help you how to use Quiz API](#Some-picture-help-you-how-to-use-Quiz-API)
 * [Setup] (#Setup)
 
 
