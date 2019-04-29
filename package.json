@@ -1,9 +1,10 @@
 {
-  "name": "quiz-sw2",
-  "version": "1.0.0",
+  "name": "quiz_api_sw2",
+  "version": "4.2.3",
   "description": "quiz component",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "mocha"
   },
   "keywords": [],
