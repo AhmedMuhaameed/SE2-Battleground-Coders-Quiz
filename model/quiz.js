@@ -17,13 +17,13 @@ module.exports = class Quiz {
             }))
     }
 
-    async getQuizzesJson() {
+    async getQuizzesJson(req, res) {
         this.QuizDB
             .find({})
             .then((quizzes => {
-                console.log(`\n\nquizzes.json ==> \n${quizzes}\n\n`)
-                return quizzes;
-                //res.json(quizzes)
+                //console.log(`\n\nquizzes.json ==> \n${quizzes}\n\n`)
+                //return quizzes;
+                res.json(quizzes)
             }))
             .catch((err => {
                 console.log(err)
@@ -42,13 +42,13 @@ module.exports = class Quiz {
             }))
     }
 
-    async getQuizJson() {
+    async getQuizJson(req, res) {
         this.QuizDB
             .find({})
             .then((quiz => {
-                console.log(`\n\nquiz.json ==> \n${quiz}\n\n`);
-                return quiz;
-                //res.json(quiz[Math.floor(Math.random()*quiz.length)])
+                //console.log(`\n\nquiz.json ==> \n${quiz}\n\n`);
+                //return quiz;
+                res.json(quiz[Math.floor(Math.random()*quiz.length)])
             }))
             .catch((err => {
                 console.log(err);
@@ -66,8 +66,8 @@ module.exports = class Quiz {
         quiz.save()
             .then(data => {
                 //console.log(data);
-                //res.json(data)
-                return data;
+                res.json(data)
+                //return data;
             })
             .catch(err => {
                 console.log(err);
@@ -93,8 +93,8 @@ module.exports = class Quiz {
                     number_of_correct_answer: score,
                     ratio: `${(score / quiz.size)*100}%`
                 }
-                //res.json(result);
-                return result;
+                res.json(result);
+                //return result;
             }))
     }
     
@@ -103,7 +103,8 @@ module.exports = class Quiz {
             .deleteOne({_id: req.body.id})
             .exec()
             .then(quiz => {
-                if(res.status >= 200 && res.status <= 400) return quiz;
+                //if(res.status >= 200 && res.status <= 400) return quiz;
+                res.status(200).json(quiz);
             })
             .catch(err => {
                 res.status(500).json({
@@ -117,8 +118,8 @@ module.exports = class Quiz {
             .deleteOne({_id: req.params.id})
             .exec()
             .then(quiz => {
-                //res.status(200).json(quiz)
-                if(res.status >= 200 && res.status <= 400) return quiz;
+                res.status(200).json(quiz)
+                //if(res.status >= 200 && res.status <= 400) return quiz;
             })
             .catch(err => {
                 res.status(500).json({
