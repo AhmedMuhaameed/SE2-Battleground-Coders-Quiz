@@ -17,7 +17,7 @@ module.exports = class Quiz {
             }))
     }
 
-    async getQuizzesJson(req, res) {
+    async getQuizzesJson() {
         this.QuizDB
             .find({})
             .then((quizzes => {
@@ -42,7 +42,7 @@ module.exports = class Quiz {
             }))
     }
 
-    async getQuizJson(req, res) {
+    async getQuizJson() {
         this.QuizDB
             .find({})
             .then((quiz => {
