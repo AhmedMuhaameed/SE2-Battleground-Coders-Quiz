@@ -10,7 +10,9 @@ router.post('/quizzes', (req, res) => {
 })
 
 router.post('/quizzes.json', (req, res) => {
-    quiz.getQuizzesJson(req, res);
+    let quizzes =  quiz.getQuizzesJson(req, res);
+    //quiz.getQuizzesJson(req, res);
+    res.json(quizzes);
 })
 
 router.get('/quiz', (req, res) => {
@@ -18,15 +20,21 @@ router.get('/quiz', (req, res) => {
 })
 
 router.get('/quiz.json', (req, res) => {
-    quiz.getQuizJson(req, res);
+    let quizVar =  quiz.getQuizJson(req, res);
+    //quiz.getQuizJson(req, res);
+    res.json(quizVar);
 })
 
 router.post('/grade.json', (req, res) => {
-    quiz.calculateScore(req, res);
+    let score =  quiz.calculateScore(req, res);
+    //quiz.calculateScore(req, res);
+    res.json(score);
 })
 
 router.post('/addQuiz.json', (req, res) => {
-    quiz.addQuizJson(req, res);
+    let quizVar =  quiz.addQuizJson(req, res);
+    //quiz.addQuizJson(req, res);
+    res.json(quizVar);
 })
 
 router.post('/deleteQuiz', (req, res) => {
@@ -34,7 +42,9 @@ router.post('/deleteQuiz', (req, res) => {
 })
 
 router.delete('/deleteQuiz.json/:id', (req, res) => {
-    quiz.deleteQuizJson(req, res);
+    let quizVar =  quiz.deleteQuizJson(req, res);
+    //quiz.deleteQuizJson(req, res);
+    res.json(quizVar);
 })
 
 module.exports = router
