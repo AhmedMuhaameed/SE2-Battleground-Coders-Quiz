@@ -22,7 +22,8 @@ module.exports = class Quiz {
             .find({})
             .then((quizzes => {
                 console.log(`\n\nquizzes.json ==> \n${quizzes}\n\n`)
-                res.json(quizzes)
+                return quizzes;
+                //res.json(quizzes)
             }))
             .catch((err => {
                 console.log(err)
@@ -46,7 +47,8 @@ module.exports = class Quiz {
             .find({})
             .then((quiz => {
                 console.log(`\n\nquiz.json ==> \n${quiz}\n\n`);
-                res.json(quiz[Math.floor(Math.random()*quiz.length)])
+                return quiz;
+                //res.json(quiz[Math.floor(Math.random()*quiz.length)])
             }))
             .catch((err => {
                 console.log(err);
@@ -64,7 +66,8 @@ module.exports = class Quiz {
         quiz.save()
             .then(data => {
                 //console.log(data);
-                res.json(data)
+                //res.json(data)
+                return data;
             })
             .catch(err => {
                 console.log(err);
@@ -90,7 +93,8 @@ module.exports = class Quiz {
                     number_of_correct_answer: score,
                     ratio: `${(score / quiz.size)*100}%`
                 }
-                res.json(result);
+                //res.json(result);
+                return result;
             }))
     }
     
@@ -99,7 +103,7 @@ module.exports = class Quiz {
             .deleteOne({_id: req.body.id})
             .exec()
             .then(quiz => {
-                res.status(200).json(quiz)
+                if(res.status >= 200 && res.status <= 400) return quiz;
             })
             .catch(err => {
                 res.status(500).json({
@@ -113,7 +117,8 @@ module.exports = class Quiz {
             .deleteOne({_id: req.params.id})
             .exec()
             .then(quiz => {
-                res.status(200).json(quiz)
+                //res.status(200).json(quiz)
+                if(res.status >= 200 && res.status <= 400) return quiz;
             })
             .catch(err => {
                 res.status(500).json({
