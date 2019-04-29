@@ -10,7 +10,7 @@ router.post('/quizzes', (req, res) => {
 })
 
 router.post('/quizzes.json', (req, res) => {
-    let quizzes =  quiz.getQuizzesJson(req, res);
+    let quizzes =  quiz.getQuizzesJson();
     //quiz.getQuizzesJson(req, res);
     res.json(quizzes);
 })
@@ -20,7 +20,7 @@ router.get('/quiz', (req, res) => {
 })
 
 router.get('/quiz.json', (req, res) => {
-    let quizVar =  quiz.getQuizJson(req, res);
+    let quizVar =  quiz.getQuizJson();
     //quiz.getQuizJson(req, res);
     res.json(quizVar);
 })
