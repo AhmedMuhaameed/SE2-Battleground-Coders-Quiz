@@ -27,6 +27,9 @@ jobs:
             - v1-dependencies-
 
       - run: npm install
+      
+      - setup_remote_docker:
+          docker_layer_caching: true
 
       - save_cache:
           paths:
@@ -36,8 +39,6 @@ jobs:
       # run tests!
       - run: npm test
 
-      #################################################
-      
       # docker login
       - run: |
           docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASS"
