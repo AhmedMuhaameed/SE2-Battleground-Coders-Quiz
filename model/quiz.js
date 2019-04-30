@@ -17,16 +17,17 @@ module.exports = class Quiz {
             }))
     }
 
-    async getQuizzesJson(req, res) {
-        this.QuizDB
+    async getQuizzesJson() {
+        return this.QuizDB
             .find({})
             .then((quizzes => {
                 //console.log(`\n\nquizzes.json ==> \n${quizzes}\n\n`)
-                //return quizzes;
-                res.json(quizzes)
+                return quizzes;
+                //res.json(quizzes)
             }))
             .catch((err => {
-                console.log(err)
+                //console.error(err)
+                return {"error": err}
             }))
     }
 
@@ -42,16 +43,17 @@ module.exports = class Quiz {
             }))
     }
 
-    async getQuizJson(req, res) {
-        this.QuizDB
+    async getQuizJson() {
+        return this.QuizDB
             .find({})
             .then((quiz => {
                 //console.log(`\n\nquiz.json ==> \n${quiz}\n\n`);
-                //return quiz;
-                res.json(quiz[Math.floor(Math.random()*quiz.length)])
+                return quiz[Math.floor(Math.random()*quiz.length)];
+                //res.json(quiz[Math.floor(Math.random()*quiz.length)])
             }))
             .catch((err => {
-                console.log(err);
+                //console.error(err)
+                return {"error": err}
             }))
     }
 
@@ -63,20 +65,21 @@ module.exports = class Quiz {
             choices:req.body.choices,
             answer:req.body.answer
         })
-        quiz.save()
+        return quiz.save()
             .then(data => {
                 //console.log(data);
-                res.json(data)
-                //return data;
+                //res.json(data)
+                return data;
             })
             .catch(err => {
-                console.log(err);
+                //console.error(err)
+                return {"error": err}
             })
     }
 
     async calculateScore(req, res) {
         let score = 0;
-        this.QuizDB.findOne({_id:req.body.id})
+        return this.QuizDB.findOne({_id:req.body.id})
             .then((quiz => {
                 for(var i = 0; i < quiz.size; i++)
                 {
@@ -93,8 +96,8 @@ module.exports = class Quiz {
                     number_of_correct_answer: score,
                     ratio: `${(score / quiz.size)*100}%`
                 }
-                res.json(result);
-                //return result;
+                //res.json(result);
+                return result;
             }))
     }
     
@@ -103,8 +106,8 @@ module.exports = class Quiz {
             .deleteOne({_id: req.body.id})
             .exec()
             .then(quiz => {
-                //if(res.status >= 200 && res.status <= 400) return quiz;
-                res.status(200).json(quiz);
+                if(res.status >= 200 && res.status <= 400) return quiz;
+                //res.status(200).json(quiz);
             })
             .catch(err => {
                 res.status(500).json({
@@ -114,17 +117,19 @@ module.exports = class Quiz {
     }
 
     async deleteQuizJson(req, res) {
-        this.QuizDB
+        return this.QuizDB
             .deleteOne({_id: req.params.id})
             .exec()
             .then(quiz => {
-                res.status(200).json(quiz)
-                //if(res.status >= 200 && res.status <= 400) return quiz;
+                //res.status(200).json(quiz)
+                return quiz;
             })
             .catch(err => {
-                res.status(500).json({
+                /*res.status(500).json({
                     error: err
-                })
+                })*/
+                //console.error(err)
+                return {"error": err}
             })
     }
 }
