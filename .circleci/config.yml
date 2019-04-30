@@ -36,6 +36,8 @@ jobs:
       # run tests!
       - run: npm test
 
+      #################################################
+      
       # docker login
       - run: |
           docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASS"
