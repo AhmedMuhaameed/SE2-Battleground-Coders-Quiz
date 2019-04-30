@@ -35,3 +35,12 @@ jobs:
 
       # run tests!
       - run: npm test
+
+      # docker login
+      - run: |
+          docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASS"
+      # build docker image
+      - run: docker build -t ahmedehab/battleground_coders_quiz .
+
+      # push docker image
+      - run: docker push ahmedehab/battleground_coders_quiz
