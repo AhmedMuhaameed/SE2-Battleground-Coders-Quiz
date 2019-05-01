@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-module.exports = class Quiz {
+class Quiz {
     constructor(quizDB){
         this.QuizDB = quizDB
     }
@@ -57,13 +57,14 @@ module.exports = class Quiz {
             }))
     }
 
-    async addQuizJson(req, res) {
+    async addQuizJson(new_quiz) {
+        
         let quiz = new this.QuizDB({
-            size:req.body.size,
-            field:req.body.field,
-            question:req.body.question,
-            choices:req.body.choices,
-            answer:req.body.answer
+            size:new_quiz.size,
+            field:new_quiz.field,
+            question:new_quiz.question,
+            choices:new_quiz.choices,
+            answer:new_quiz.answer
         })
         return quiz.save()
             .then(data => {
@@ -133,3 +134,5 @@ module.exports = class Quiz {
             })
     }
 }
+
+module.exports = Quiz;
