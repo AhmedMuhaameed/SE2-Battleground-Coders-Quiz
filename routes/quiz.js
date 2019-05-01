@@ -33,7 +33,16 @@ router.post('/grade.json', async (req, res) => {
 })
 
 router.post('/addQuiz.json', async (req, res) => {
-    let quizVar =  await quiz.addQuizJson(req, res);
+    
+    let new_quiz = {
+        size:req.body.size,
+        field:req.body.field,
+        question:req.body.question,
+        choices:req.body.choices,
+        answer:req.body.answer
+    }
+
+    let quizVar =  await quiz.addQuizJson(new_quiz);
     //quiz.addQuizJson(req, res);
     res.json(quizVar);
 })
