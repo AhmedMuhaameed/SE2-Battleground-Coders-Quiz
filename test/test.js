@@ -19,7 +19,7 @@ test('connect to database', async () =>{
 
 const db = new model(modelDB);
 
-test('addQuizJson', async () => {
+test('addQuizJson quiz 1', async () => {
 
     // change quiz
 
@@ -51,6 +51,22 @@ test('getQuizJson', async ()=>{
 test('delete all data', async () => {
     let res = await modelDB.deleteMany({});
     expect(res).not.toBeNull();
+})
+
+test('addQuizJson quiz 2', async () => {
+
+    // change quiz
+
+    let newQuiz = {
+        "size": 3,
+        "field": "Geography",
+        "question": ["Mexico is part of North America.?", "California, New Mexico and Canada are all_____________.", "What line of latitude is at 0 degrees?"],
+        "choices": [["True", "False"], ["States", "Countries", "In North America"], ["Equator", "Prime Meridian", "Time Zones"]],
+        "answer": ["True", "In North America", "Equator"]
+    }
+
+    let quiz = await db.addQuizJson(newQuiz);
+    expect(quiz).not.toBeNull();
 })
 
 test('close connection with mongo db', async () => {
